@@ -27,13 +27,24 @@ border: 1px solid #dddddd;
 text-align: left;
 padding: 8px;
 }
+td {
+    color: grey;
+}
 
 #info {
     font-weight: bold;
 }
 
 .warn, .error {
-    color:red;
     font-weight: bold;
 }
+.error {
+    color:red;
+}
+.warn {
+    color:#F6BE00;
+}
 
+a {
+    color:lightblue ;
+}

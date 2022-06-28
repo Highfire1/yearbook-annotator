@@ -8,34 +8,39 @@
     
     
     <body onload="init()">
+        <!--HEADER-->
         <div id="header">
             <p>Welcome to the John Oliver Secondary Yearbook Annotator</p>
             <p>This tool helps you efficiently add grades to a list of students</p>
             <p>Please upload a .csv file with student data.</p>
-
+            <a target="_blank" href="https://docs.google.com/spreadsheets/d/1WiDUqSu4ee0q4Rk2ulnK-hNBw5_zR6BhfDwpZNYSEFk/edit?usp=sharing">THE FILE MUST BE UPLOADED IN THIS FORMAT</a>
         </div>
-
+        <br>
+        
+        <!--FILE INPUT-->
         <input id="fileInput" type="file" accept=".csv"/>
-
+        
+        <!--GETS FILLED WITH FILE DETAILS-->
         <p id="info"></p>
-
         <br>
+
+        <!--LOADS PREVIEW DATA-->
         <div id="csvPreviewTableDiv"></div>
-        
         <br>
 
-        <textarea id="textarea_input" rows="4" cols="50" placeholder = "Enter names you want annotated here."></textarea>
-        
+        <!--TEXT INPUT-->
+        <textarea id="textarea_input" rows="4" cols="50" placeholder = "Enter names you want annotated here." spellcheck="false"></textarea>
         <br>
-        
+
+        <!--warnings-->
         <div id="warnings"></div>
-        
         <br>
 
-        <textarea readonly id="textarea_output" rows="4" cols="50" placeholder = "The output will show up here."></textarea>
-        
+        <!--TEXT OUTPUT-->
+        <textarea readonly id="textarea_output" rows="4" cols="50" placeholder = "The output will show up here." spellcheck="false"></textarea>
         <br>
 
+        <!--SAVE/CLEAR BUTTON-->
         <button id="button">save csv data (so you don't have to keep reuploading the csv file)</button>
     </body>
 

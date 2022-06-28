@@ -1,9 +1,14 @@
+// hi! 
+// This is a program to annotate yearbook lists.
+// If you found your way here, I'm sorry to say that it is an absolute mess
+// but have fun peeking around the code :)
+
 var names = []
 var grades = []
 var save_data
 
-var name_selections = [3, 0]
-var grade_column = 4
+var name_selections = [0, 1, 2]
+var grade_column = 3
 
 function init() {
     document.getElementById('fileInput').addEventListener('change', handleFileSelect);
@@ -26,6 +31,7 @@ function handleFileLoad(event) {
     save_data = event.target.result
     parseCSV(event.target.result)
 }
+
 function parseCSV(str) {
 
     let data = []
@@ -49,6 +55,7 @@ function parseCSV(str) {
 
     populateTable(data)
     populateInfo(data)
+    annotate()
 }
 
 // populate the DECISION TABLE with data
@@ -75,8 +82,7 @@ function populateTable(data) {
 
 function populateInfo(data) {
     let info = document.getElementById('info')
-    info.innerHTML = `${names.length} Students loaded!<br>Previewing first 5 students:`
-
+    info.innerHTML = `${names.length-1} Students loaded!<br>Previewing first 5 students:`
 }
 
 
@@ -106,7 +112,7 @@ function annotate(event) {
         match = match[0]
         
         if (match === undefined) {
-            notify('warn', `Could not find ${name}.`)
+            notify('error', `Could not find ${name}.`)
             out += `${match}, `
             continue
 
@@ -116,15 +122,13 @@ function annotate(event) {
             notify('warn', `Could not find ${name}, replacing it with ${match}.`)
         } 
         let index = names.indexOf(match)
-        out += `${match} (${grades[index]}), `
+        out += `${match} (${grades[index].trim()}), `
 
     }
     document.getElementById('textarea_output').value = out
 }
 
 function notify(level, text) {
-    console.log("WARN: " + text)
-
     let box = document.createElement("p");
     box.innerText = text
     box.className = level

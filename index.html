@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="difflib.js"></script>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    
+    
+    <body onload="init()">
+        <div id="header">
+            <p>Welcome to the John Oliver Secondary Yearbook Annotator</p>
+            <p>This tool helps you efficiently add grades to a list of students</p>
+            <p>Please upload a .csv file with student data.</p>
+
+        </div>
+
+        <input id="fileInput" type="file" accept=".csv"/>
+
+        <p id="info"></p>
+
+        <br>
+        <div id="csvPreviewTableDiv"></div>
+        
+        <br>
+
+        <textarea id="textarea_input" rows="4" cols="50" placeholder = "Enter names you want annotated here."></textarea>
+        
+        <br>
+        
+        <div id="warnings"></div>
+        
+        <br>
+
+        <textarea readonly id="textarea_output" rows="4" cols="50" placeholder = "The output will show up here."></textarea>
+        
+        <br>
+
+        <button id="button">save csv data (so you don't have to keep reuploading the csv file)</button>
+    </body>
+
+</html>
